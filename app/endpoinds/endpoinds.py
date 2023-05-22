@@ -65,7 +65,6 @@ async def card_list(skip: int = 0, limit: int = 100):
 
 @router.post('/transactions/create')
 async def create_card(transaction: BaseTransactions):
-    print(transaction.dict().get('card_id'))
     transaction_created = await TransactionService.create(transaction)
     return transaction_created
 
